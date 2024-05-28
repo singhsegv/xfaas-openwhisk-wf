@@ -1,0 +1,70 @@
+{
+    "composition": {
+        "type": "sequence",
+        "components": [
+            {
+                "type": "action",
+                "name": "/guest/graphs/graph_gen",
+                "path": "[0]"
+            },
+            {
+                "type": "parallel",
+                "components": [
+                    {
+                        "type": "action",
+                        "name": "/guest/graphs/graph_bft",
+                        "path": "[1][0]"
+                    },
+                    {
+                        "type": "action",
+                        "name": "/guest/graphs/pagerank",
+                        "path": "[1][1]"
+                    },
+                    {
+                        "type": "action",
+                        "name": "/guest/graphs/graph_mst",
+                        "path": "[1][2]"
+                    }
+                ],
+                "path": "[1]"
+            },
+            {
+                "type": "action",
+                "name": "/guest/graphs/aggregate",
+                "path": "[2]"
+            }
+        ],
+        "path": ""
+    },
+    "ast": {
+        "type": "sequence",
+        "components": [
+            {
+                "type": "action",
+                "name": "/guest/graphs/graph_gen"
+            },
+            {
+                "type": "parallel",
+                "components": [
+                    {
+                        "type": "action",
+                        "name": "/guest/graphs/graph_bft"
+                    },
+                    {
+                        "type": "action",
+                        "name": "/guest/graphs/pagerank"
+                    },
+                    {
+                        "type": "action",
+                        "name": "/guest/graphs/graph_mst"
+                    }
+                ]
+            },
+            {
+                "type": "action",
+                "name": "/guest/graphs/aggregate"
+            }
+        ]
+    },
+    "version": "0.12.0"
+}

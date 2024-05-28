@@ -1,0 +1,12 @@
+{
+    "$composer": {
+        "redis": {
+            "uri": "redis://owdev-redis.openwhisk.svc.cluster.local:6379"
+        },
+        "openwhisk": {
+            "ignore_certs": true
+        }
+    },
+    "size": 64, 
+    "graph_type": "complete"
+}
